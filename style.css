@@ -1,0 +1,117 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 1.5rem;
+    display: grid;
+    grid-template-areas: "input input input input"
+                         "btnSum btnSub btnMulti btnDiv"
+                         "btn1 btn2 btn3 btnPonto"
+                         "btn4 btn5 btn6 btnEqual"
+                         "btn7 btn8 btn9 btnEqual"
+                         "btn0 btn0 btnC btnEqual";
+    grid-template-columns: 50px 50px 50px 50px;
+    grid-template-rows: 50px 50px 50px 50px 50px 50px;
+    gap: 1rem;
+    background-color: #070C15;
+}
+
+.container input {
+    grid-area: input;
+    padding: 0 1rem;
+    font-size: 25px;
+}
+
+.container button {
+    font-size: 20px;
+    background-color: #ededed;
+}
+
+.container button:hover {
+    background-color: rgb(204, 204, 204);
+    cursor: pointer;
+}
+
+.container input,button {
+    outline-style: none;
+    border: none;
+    border-radius: 5px;
+    font-family:'Trebuchet MS', sans-serif;
+}
+
+#btn1 {
+    grid-area: btn1;
+}
+
+#btn2 {
+    grid-area: btn2;
+}
+
+#btn3 {
+    grid-area: btn3;
+}
+
+#btn-sum {
+    grid-area: btnSum;
+}
+
+#btn4 {
+    grid-area: btn4;
+}
+
+#btn5 {
+    grid-area: btn5;
+}
+
+#btn6 {
+    grid-area: btn6;
+}
+
+#btn-sub {
+    grid-area: btnSub;
+}
+
+#btn7 {
+    grid-area: btn7;
+}
+
+#btn8 {
+    grid-area: btn8;
+}
+
+#btn9 {
+    grid-area: btn9;
+}
+
+#btn-multi {
+    grid-area: btnMulti;
+}
+
+#btnC {
+    grid-area: btnC;
+}
+
+#btn0 {
+    grid-area: btn0;
+}
+
+#btnEqual {
+    grid-area: btnEqual;
+}
+
+#btn-div {
+    grid-area: btnDiv;
+}
+
+#btn-ponto {
+    grid-area: btnPonto;
+}
