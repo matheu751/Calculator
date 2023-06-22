@@ -10,7 +10,7 @@
 
 <body>
     <div class="container">
-        <input class="value" type="text">
+        <input class="value" type="text" onchange="changeBtn()">
         <button type="button" id="btn1" onclick="getNumber(1)"> 1 </button>
         <button type="button" id="btn2" onclick="getNumber(2)"> 2 </button>
         <button type="button" id="btn3" onclick="getNumber(3)"> 3 </button>
@@ -22,12 +22,12 @@
         <button type="button" id="btn9" onclick="getNumber(9)"> 9 </button>
         <button type="button" id="btn0" onclick="getNumber(0)"> 0 </button>
         <button type="button" id="btnC" onclick="cleanInput()"> C </button>
-        <button type="button" id="btnEqual"> = </button>
         <button type="button" id="btn-sum" onclick="getNumber('+')"> + </button>
         <button type="button" id="btn-sub" onclick="getNumber('-')"> - </button>
         <button type="button" id="btn-multi" onclick="getNumber('*')"> * </button>
         <button type="button" id="btn-div" onclick="getNumber('/')"> / </button>
         <button type="button" id="btn-ponto" onclick="getNumber('.')"> . </button>
+        <button type="button" id="btnEqual" disabled> = </button>
     </div>
 </body>
 
