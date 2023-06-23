@@ -1,10 +1,8 @@
 const inputValue = document.querySelector(".value")
 
-const btnNumbers = document.getElementById("btn1")
-
 const btnResult = document.querySelector("#btnEqual")
 
-function getNumber(value) {
+function getBtnValue(value) {
     inputValue.value += value
     inputValue.dispatchEvent(new Event('change'))
     inputValue.focus()
@@ -37,11 +35,23 @@ function getSinalNumbers() {
     }
 }
 
+function changeBtn() {
+    let content = inputValue.value
+    const {sinal, numbers} = getSinalNumbers()
+    if (content.length > 2 && sinal.length >= 1 && numbers.length >= 2) {
+        btnResult.disabled = false
+    }
+    else {
+        btnResult.disabled = true
+    }
+}
+
 calculateRes = () => {
     const {sinal, numbers} = getSinalNumbers()
     let number = numbers.map(Number)
     let result
-    switch (sinal) {
+    if (numbers.length < 3) {
+        switch (sinal) {
         case '+':
             result = number[0] + number[1]
             break
@@ -57,23 +67,15 @@ calculateRes = () => {
                 result = result.toFixed(1)
             }
             break
+        }
     }
     if (isNaN(result)) {
-        inputValue.value = 'Invalid calculation'
+        result = 'Invalid calculation'
     }
     inputValue.value = result
     changeBtn()
 }
 
-function changeBtn() {
-    let content = inputValue.value
-    const {sinal, numbers} = getSinalNumbers()
-    if (content.length > 2 && sinal.length >= 1 && numbers.length >= 2) {
-        btnResult.disabled = false
-    }
-    else {
-        btnResult.disabled = true
-    }
-}
-
 btnResult.addEventListener('click', calculateRes)
+
+inputValue.addEventListener('input', changeBtn)
