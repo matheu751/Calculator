@@ -132,3 +132,10 @@ body {
 #btn-ponto {
     grid-area: btnPonto;
 }
+
+@media screen and (max-width: 700px) {
+    .container button:not(:active) {
+        transform: scale(1.0);
+        transition: 0.2s;
+    }
+}
